@@ -15,11 +15,16 @@ use GuzzleHttp\RequestOptions;
 
 class FulfilledByTiktok extends Resource
 {
-    protected $category = 'fulfilled_by_tiktok';
+    protected $category = 'fbt';
     protected $minimum_version = 202408;
 
     public function getFbtMerchantOnboardedRegions()
     {
-        $this->call('GET', 'merchants/onboarded_regions');
+        return $this->call('GET', 'merchants/onboarded_regions');
+    }
+
+    public function getFbtWarehouseList()
+    {
+        return $this->call('GET', 'warehouses');
     }
 }
